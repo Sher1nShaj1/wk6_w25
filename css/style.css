@@ -1,0 +1,57 @@
+.grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 3fr 1fr 1fr; */
+    grid-template-columns: 2% 3% 90% 3% 2%;
+    gap: 10px;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.grid img {
+    width: 100%;
+    height: auto;
+    /* padding: 5px; */
+    box-sizing: border-box;
+    grid-column: 3;
+    transition: box-shadow 0.3s ease;
+}
+.grid img:hover{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid img:nth-child(even) {
+    border: 5px dashed orange;
+}
+
+.grid img:first-child {
+    border: 5px solid green;
+    /* padding: 10px; */
+}
+
+/* Specifically target the last image in the grid to span three columns */
+.grid img:last-child {
+    grid-column: span 5;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 5vw;
+        padding: 5vw;
+    }
+
+    .grid img {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 5vw;
+        padding: 5vw;
+    }
+
+    .grid img {
+        grid-column: 1;
+    }
+}
